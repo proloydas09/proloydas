@@ -4,25 +4,25 @@ const PortfolioGrid = () => {
       id: 1,
       title: "Luxe Watches",
       category: "E-Commerce / E-Branding",
-      image: "./luxe_watch.png",
+      image: `${import.meta.env.BASE_URL}luxe_watch.png`,
     },
     {
       id: 2,
       title: "Zenith Banking",
       category: "Fintech / App Design",
-      image: "./zenith_banking.png",
+      image: `${import.meta.env.BASE_URL}zenith_banking.png`,
     },
     {
       id: 3,
       title: "Aether Real Estate",
       category: "Proptech / Web Experience",
-      image: "./aether_estate.png",
+      image: `${import.meta.env.BASE_URL}aether_estate.png`,
     },
     {
       id: 4,
       title: "Organic Harvest",
       category: "Sustainability / UX Research",
-      image: "./organic_harvest.png",
+      image: `${import.meta.env.BASE_URL}organic_harvest.png`,
     }
   ];
 
