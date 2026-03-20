@@ -6,7 +6,7 @@ const Contact = () => {
         <p className="text-lg text-muted mb-16">Have a project in mind? Let's turn your vision into reality.</p>
         
         <form 
-          action="https://formspree.io/f/proloydas09@gmail.com" 
+          action="https://formspree.io/f/xdawjola" 
           method="POST"
           className="flex flex-col gap-6"
         >
