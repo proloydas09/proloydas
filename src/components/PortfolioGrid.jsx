@@ -1,31 +1,7 @@
-const PortfolioGrid = () => {
-  const projects = [
-    {
-      id: 1,
-      title: "Luxe Watches",
-      category: "E-Commerce / E-Branding",
-      image: `${import.meta.env.BASE_URL}luxe_watch.png`,
-    },
-    {
-      id: 2,
-      title: "Zenith Banking",
-      category: "Fintech / App Design",
-      image: `${import.meta.env.BASE_URL}zenith_banking.png`,
-    },
-    {
-      id: 3,
-      title: "Aether Real Estate",
-      category: "Proptech / Web Experience",
-      image: `${import.meta.env.BASE_URL}aether_estate.png`,
-    },
-    {
-      id: 4,
-      title: "Organic Harvest",
-      category: "Sustainability / UX Research",
-      image: `${import.meta.env.BASE_URL}organic_harvest.png`,
-    }
-  ];
+import { Link } from 'react-router-dom';
+import { projects } from '../data/projects';
 
+const PortfolioGrid = () => {
   return (
     <section id="work" className="section-padding container mx-auto px-12">
       <h2 className="text-6xl mb-6 text-center">Selected <span className="text-accent">Works</span></h2>
@@ -40,13 +16,18 @@ const PortfolioGrid = () => {
                 alt={project.title} 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <span className="btn btn-outline pointer-events-none">View Project</span>
-              </div>
+              <Link to={`/project/${project.id}`} className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
+                <span className="btn btn-outline">View Project</span>
+              </Link>
             </div>
-            <div className="p-10">
-              <span className="text-xs text-muted uppercase tracking-widest block mb-2">{project.category}</span>
-              <h3 className="text-2xl font-serif">{project.title}</h3>
+            <div className="p-10 flex justify-between items-end">
+              <div>
+                <span className="text-xs text-muted uppercase tracking-widest block mb-2">{project.category}</span>
+                <h3 className="text-2xl font-serif">{project.title}</h3>
+              </div>
+              <Link to={`/project/${project.id}`} className="text-accent hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </Link>
             </div>
           </div>
         ))}
